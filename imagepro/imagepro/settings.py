@@ -74,7 +74,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '/home/arshdeep/django/imagepro/media/'
+MEDIA_ROOT = '/home/ubuntu/django/Project3-422X/imagepro/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -98,7 +98,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/arshdeep/django/imagepro/myapp/templates/static",
+    "/home/ubuntu/django/Project3-422X/imagepro/myapp/templates/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -139,8 +139,32 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #os.path.join(os.path.realpath(__file__), '../templates'),
+    "/home/ubuntu/django/Project3-422X/imagepro/myapp/templates",
+)
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    #os.path.join(os.path.realpath(__file__), '../templates'),
     "/home/arshdeep/django/imagepro/myapp/templates",
 )
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -164,11 +188,11 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    
+
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
-         
+
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
